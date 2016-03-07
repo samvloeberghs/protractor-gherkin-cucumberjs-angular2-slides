@@ -52,9 +52,9 @@
 				<section>
 					<h2>whoami?</h2>
 					<img src="img/samvloeberghs.jpg" alt="Sam Vloeberghs" id="profilepic" />
-					<p>
-						Freelance frontend architect
-					</p>
+					<h3>
+						Freelance Frontend Architect
+					</h3>
 					<p>
 						Questions?
 					</p>
@@ -117,10 +117,22 @@
                         <ul class="wide">
                             <li>don't use the Xpath selector</li>
                             <li>don't mock unless you need to</li>
-                            <li>Refresh / navigate before every test</li>
+                            <li>refresh / navigate before every test</li>
                         </ul>
                     </section>
                 </section>
+
+				<section>
+
+					<h2>Locators & functions</h2>
+					<ul>
+						<li>byElement(), Id, Model, Text, ..</li>
+						<li>clear()</li>
+						<li>sendKeys()</li>
+						<li>click()</li>
+					</ul>
+
+				</section>
 
                 <section>
                     <section>
@@ -184,18 +196,76 @@ describe('Question page', () => {
                 </section>
 
                 <section>
-                    <pre><code class="hljs" contenteditable style="word-wrap: break-word;">
-                        &lt;section
-                        data-background="image.png" data-background-repeat="repeat"
-                        data-background-size="100px"&gt;
-                    </code></pre>
-                </section>
-
-                <section>
                     <section>
                         <h2>Project structure</h2>
+
+						<ul>
+							<li>locating test files should be instant</li>
+							<li>clearly seperate from unit tests</li>
+							<li>folder structure more readable</li>
+						</ul>
                     </section>
+					<section>
+						<h2>Avoid :(</h2>
+						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
+|-- project-folder
+	|-- app
+		|-- home
+			home.html
+			home.module.js
+			home.controller.js
+		|-- contacts
+			contacts.html
+			contacts.module.js
+			contacts.controller.js
+	app.module.js
+	app.controller.js
+	app.css
+	index.html
+	|-- test
+		|-- unit
+		|-- e2e
+			home.pageObject.js
+			home.spec.js
+			contacts.pageObject.js
+			contacts.spec.js
+						</code></pre>
+					</section>
+					<section>
+						<h2>Better :)</h2>
+						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
+|-- project-folder
+|-- app
+	|-- home
+		home.html
+		home.module.js
+		home.controller.js
+	|-- contacts
+		contacts.html
+		contacts.module.js
+		contacts.controller.js
+	app.js
+	app.module.js
+	app.controller.js
+	app.css
+	index.html
+|-- test
+	|-- unit
+	|-- e2e
+		|-- home
+			home.pageObject.js
+			home.spec.js
+		|-- contacts
+			contacts.pageObject.js
+			contacts.spec.js
+						</code></pre>
+					</section>
+
                 </section>
+
+				<section>
+					<h2>Demo!</h2>
+				</section>
 
             </div>
 
