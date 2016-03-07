@@ -1,0 +1,20 @@
+.reveal h1{
+    letter-spacing:15px;
+}
+
+.wide li{
+    margin:20px 0 20px 0;
+}
+
+#profilepic {
+    border-radius: 100px;
+    max-width: 125px;
+}
+
+.reveal pre{
+    width:95%;
+}
+
+.reveal pre code{
+    padding:0 25px;
+}
