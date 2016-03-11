@@ -1,5 +1,18 @@
+.reveal {
+    font-family: 'Roboto', sans-serif;
+}
+
+.reveal h2,
+.reveal h3{
+    font-weight:bold;
+    font-family: 'Roboto', sans-serif;
+}
+.reveal p{
+    font-family: 'Roboto', sans-serif;
+}
+
 .reveal h1{
-    letter-spacing:15px;
+    letter-spacing:5px;
 }
 
 .wide li{
