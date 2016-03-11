@@ -53,16 +53,17 @@
 					<h2>whoami?</h2>
 					<img src="img/samvloeberghs.jpg" alt="Sam Vloeberghs" id="profilepic" />
 					<h3>
+						Sam Vloeberghs<br />
 						Freelance Frontend Architect
 					</h3>
 					<p>
 						Questions?
 					</p>
-					<ul>
-						<a href="mailto:sam.vloeberghs@gmail.com">mail / hangout</a> -
-						<a target="_blank" href="https://twitter.com/samvloeberghs">follow</a> -
+					<p>
+						<a href="mailto:sam.vloeberghs@gmail.com">mail / hangout (sam.vloeberghs)</a> <br />
+						<a target="_blank" href="https://twitter.com/samvloeberghs">follow / tweet @samvloeberghs</a> <br />
 						<a target="_blank" href="https://www.linkedin.com/in/samvloeberghs">connect</a>
-					</ul>
+					</p>
 				</section>
 
 				<section>
@@ -124,13 +125,74 @@
 
 				<section>
 
-					<h2>Locators & functions</h2>
-					<ul>
-						<li>byElement(), Id, Model, Text, ..</li>
-						<li>clear()</li>
-						<li>sendKeys()</li>
-						<li>click()</li>
-					</ul>
+					<section>
+						<h2>Locators & functions</h2>
+						<ul>
+							<li>find elements</li>
+							<li>perform actions</li>
+							<li>retrieve values</li>
+						</ul>
+						<p>
+							<strong>All operations are async!</strong>
+						</p>
+					</section>
+
+					<section>
+						<h3>Locators</h3>
+						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
+element(by.id('addbutton'));	// <button id="addbutton"></button>
+element(by.css('some-css'));	// <some-css></some-css>
+element(by.css('.special'));	// <span class="special"></span>
+element(by.model('name'));	// <span ng-model="item.name"></span>
+element(by.binding('name'));	// <span ng-bind="item.name"></span>
+
+element(by.css('my-css'));	// is the same as
+$('my-css');			// short cut selector  ( css selectors )
+						</code></pre>
+						<p>Protractor documentation : <a href="https://angular.github.io/protractor/#/locators#locators">locators</a></p>
+					</section>
+
+					<section>
+						<h3>Actions</h3>
+						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
+var el = element(locator);
+
+// Click on the element
+el.click();
+
+// Send keys to the element (usually an input)
+el.sendKeys('my text');
+
+// Clear the text in an element (usually an input)
+el.clear();
+
+// Get the value of an attribute, for example, get the value of an input
+el.getAttribute('value');
+						</code></pre>
+
+						<p>Protractor documentation : <a href="https://angular.github.io/protractor/#/locators#actions">actions</a></p>
+					</section>
+
+					<section>
+						<h3>Finding multiple elements</h3>
+						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
+element.all(by.css('.selector')).then(function(elements) {
+	// elements is an array of ElementFinders.
+});
+
+// Number of elements.
+element.all(locator).count();
+
+// Get by index (starting at 0).
+element.all(locator).get(index);
+
+// First and last.
+element.all(locator).first();
+element.all(locator).last();
+						</code></pre>
+
+						<p>Protractor documentation : <a href="https://angular.github.io/protractor/#/locators#finding-multiple-elements">multiple elements</a></p>
+					</section>
 
 				</section>
 
