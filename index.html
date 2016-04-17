@@ -44,23 +44,28 @@
 
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
-                <section>
-                    <h1>Protractor</h1>
-                    <h3>Fully automated E2E testing</h3>
+                <section id="intro">
+					<img src="img/angular2.png" alt="Angular 2 logo" class="big"/>
+                    <h1>Testing your Angular2 application</h1>
+                    <h3>w/ Protractor, Gherkin & CucumberJS</h3>
+
+					<img src="img/protractor-logo.png" alt="Protractor logo" class="small"/>
+					<img src="img/cucumber-logo.svg" alt="CucumberJs logo" class="small"/>
+
                     <p>
-                        <small>Created by <a href="http://samvloeberghs.be">Sam Vloeberghs</a> / <a
+                        <small>By <a href="http://samvloeberghs.be">Sam Vloeberghs</a> / <a
                                 href="http://twitter.com/samvloeberghs">@samvloeberghs</a></small>
                     </p>
                 </section>
-				<section>
-					<h2>whoami?</h2>
+				<section id="whoami">
+					<h1>whoami?</h1>
 					<img src="img/samvloeberghs.jpg" alt="Sam Vloeberghs" id="profilepic" />
 					<h3>
 						Sam Vloeberghs<br />
-						Freelance Frontend Architect
+						Freelance Software Engineer
 					</h3>
 					<p>
-						Questions?
+						Questions? Ask anytime
 					</p>
 					<p>
 						<a href="mailto:sam.vloeberghs@gmail.com">mail / hangout (sam.vloeberghs)</a> <br />
@@ -69,67 +74,55 @@
 					</p>
 				</section>
 
-				<section>
-
-					<h2>What is protractor</h2>
+				<section id="today-s-topics">
+					<h2>Today's topics</h2>
 
 					<ul>
-						<li>Google product</li>
-						<li>successor of the scenario runner</li>
-						<li>E2E testing framework</li>
-						<li>runs on top of selenium webdriver</li>
+                        <li>Testing :) jeeeuj</li>
+						<li><strong>Protractor</strong> for E2E testing</li>
+						<li><strong>BDD</strong> with <strong>Gherkin</strong> features & scenarios</li>
+						<li><strong>CucumberJS</strong></li>
 					</ul>
+
+                    <p>
+                        Play around: example project:
+                        <a target="_blank" href="https://github.com/samvloeberghs/protractor-gherkin-cucumberjs-angular2">Github repo</a>
+                    </p>
 
 				</section>
 
-				<section>
-					<h2>Unit vs E2E testing</h2>
-					<ul>
-						<li>test units / atomic parts of app</li>
-						<li>mocks out dependencies</li>
-						<li>code perspective</li>
-					</ul>
-					<p>vs</p>
-					<ul>
-						<li>test full functional parts of app</li>
-						<li>integrate different aspects</li>
-						<li>user behaviour perspective</li>
-					</ul>
-				</section>
-
-                <section>
-                    <section>
-                        <h2>Best practices (1)</h2>
-                        <p>
-                            Based on the styleguide by
-                            <a href="https://twitter.com/CarmenPopoviciu" target="_blank">Carmen Popoviciu</a>
-                        </p>
-                        <ul>
-                            <li><strong>do not cheat on your tests</strong></li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <ul class="wide">
-                            <li>don't retest what's unit tested</li>
-                            <li>use proper naming for elements</li>
-                            <li>wrap common elements in page objects</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <ul class="wide">
-                            <li>don't use the Xpath selector</li>
-                            <li>don't mock unless you need to</li>
-                            <li>refresh / navigate before every test</li>
-                        </ul>
-                    </section>
+                <section id="unit-vs-e2e-testing">
+                    <h2>Unit vs E2E testing</h2>
+                    <ul>
+                        <li>test units / atomic parts of app</li>
+                        <li>mocks out dependencies</li>
+                        <li>code & business logic perspective</li>
+                    </ul>
+                    <p><strong>vs</strong></p>
+                    <ul>
+                        <li>test full functional parts of app</li>
+                        <li>verify integration of different parts</li>
+                        <li>user behaviour perspective</li>
+                    </ul>
                 </section>
 
 				<section>
 
-					<section>
-						<h2>Locators & functions</h2>
+					<section id="what-is-protractor">
+                        <h2>What is protractor</h2>
+
+                        <img src="img/protractor-logo.png" alt="Protractor logo" class="frameworklogo"/>
+
+                        <ul>
+                            <li>Google product</li>
+                            <li>successor of the scenario runner</li>
+                            <li>E2E testing framework</li>
+                            <li>runs on top of selenium webdriver</li>
+                        </ul>
+					</section>
+
+					<section id="locators-actions">
+						<h2>Locators & actions</h2>
 						<ul>
 							<li>find elements</li>
 							<li>perform actions</li>
@@ -140,197 +133,236 @@
 						</p>
 					</section>
 
-					<section>
+					<section id="locators">
 						<h3>Locators</h3>
 						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
 element(by.id('addbutton'));	// <button id="addbutton"></button>
 element(by.css('some-css'));	// <some-css></some-css>
 element(by.css('.special'));	// <span class="special"></span>
-element(by.model('name'));	// <span ng-model="item.name"></span>
-element(by.binding('name'));	// <span ng-bind="item.name"></span>
+
+element(by.binding('first'));	// <span>{{first}}</span>
+element(by.model('second'));	// <input ng-model="second" />
 
 element(by.css('my-css'));	// is the same as
 $('my-css');			// short cut selector  ( css selectors )
 						</code></pre>
+
 						<p>Protractor documentation : <a href="https://angular.github.io/protractor/#/locators#locators">locators</a></p>
 					</section>
 
-					<section>
+                    <section id="finding-multiple-elements">
+                        <h3>Finding multiple elements</h3>
+						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
+element.all(by.css('.selector')).then((elements) => {
+    /* elements is an array of ElementFinders. */
+});
+
+/* Number of elements */
+element.all(locator).count();
+
+/* Get by index (starting at 0) */
+element.all(locator).get(index);
+
+/* First and last */
+element.all(locator).first();
+element.all(locator).last();
+                        </code></pre>
+
+                        <p>
+                            Protractor documentation :
+                            <a href="https://angular.github.io/protractor/#/locators#finding-multiple-elements">multiple elements</a>
+                        </p>
+
+                    </section>
+
+					<section id="actions">
 						<h3>Actions</h3>
 						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
 var el = element(locator);
 
-// Click on the element
+/* Click on the element */
 el.click();
 
-// Send keys to the element (usually an input)
+/* Send keys to the element (usually an input) */
 el.sendKeys('my text');
 
-// Clear the text in an element (usually an input)
+/* Clear the text in an element (usually an input) */
 el.clear();
 
-// Get the value of an attribute, for example, get the value of an input
+/* Get the value of an attribute, for example, get the value of an input */
 el.getAttribute('value');
 						</code></pre>
 
 						<p>Protractor documentation : <a href="https://angular.github.io/protractor/#/locators#actions">actions</a></p>
 					</section>
 
-					<section>
-						<h3>Finding multiple elements</h3>
-						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
-element.all(by.css('.selector')).then(function(elements) {
-	// elements is an array of ElementFinders.
-});
-
-// Number of elements.
-element.all(locator).count();
-
-// Get by index (starting at 0).
-element.all(locator).get(index);
-
-// First and last.
-element.all(locator).first();
-element.all(locator).last();
-						</code></pre>
-
-						<p>Protractor documentation : <a href="https://angular.github.io/protractor/#/locators#finding-multiple-elements">multiple elements</a></p>
-					</section>
-
 				</section>
 
                 <section>
-                    <section>
-                        <h2>Page objects</h2>
+                    <section id="best-practices-1">
+                        <h2>Best practices in E2E testing</h2>
+                        <p>
+                            Mostly based on the styleguide by
+                            <a href="https://github.com/CarmenPopoviciu/protractor-styleguide" target="_blank">Carmen Popoviciu</a>
+                        </p>
                         <ul>
-                            <li>extra abstraction tests - code</li>
-                            <li>can be reused</li>
-                            <li>don't do assertions in page objects</li>
+                            <li><strong>do not cheat on your tests</strong></li>
                         </ul>
                     </section>
-                    <section>
-                        <h2>avoid :(</h2>
-                        <pre><code class="hljs" contenteditable style="word-wrap: break-word;">
-/* question.spec.js */
-describe('Question page', () => {
-    it('should answer any question', () => {
-        let question = element(by.model('question.text'));
-        let answer = element(by.binding('answer'));
-        let button = element(by.css('.question-button'));
 
-        question.sendKeys('What is the purpose of life?');
-        button.click();
-        expect(answer.getText()).toEqual("Chocolate!");
-    });
-});
-                        </code></pre>
-                    </section>
-                    <section>
-                        <h2>encapsulate</h2>
-                        <pre><code class="hljs" contenteditable style="word-wrap: break-word;">
-/* question.page.js */
-var QuestionPage = () => {
-	this.question = element(by.model('question.text'));
-	this.answer = element(by.binding('answer'));
-	this.button = element(by.className('question-button'));
-
-	this.ask = (question) => {
-		this.question.sendKeys(question);
-		this.button.click();
-	};
-};
-module.exports = QuestionPage;
-                        </code></pre>
-                    </section>
-                    <section>
-                    <h2>better :)</h2>
-                    <pre><code class="hljs" contenteditable style="word-wrap: break-word;">
-/* question.spec.js */
-let QuestionPage = require('./question.page');
-
-describe('Question page', () => {
-	let question = new QuestionPage();
-
-	it('should ask any question', () => {
-		question.ask('What is the purpose of meaning?');
-		expect(question.answer.getText()).toEqual('Chocolate');
-	});
-});
-                    </code></pre>
+                    <section id="best-practices-2">
+                        <ul class="wide">
+                            <li>don't retest what's unit tested</li>
+                            <li>wrap common elements in page objects</li>
+                            <li>don't mock unless you need to</li>
+                            <li>refresh / navigate before every test</li>
+                        </ul>
                     </section>
                 </section>
 
-                <section>
-                    <section>
-                        <h2>Project structure</h2>
+                <section id="protractor-angular2-changes">
 
-						<ul>
-							<li>locating test files should be instant</li>
-							<li>clearly seperate from unit tests</li>
-							<li>folder structure more readable</li>
-						</ul>
-                    </section>
-					<section>
-						<h2>Avoid :(</h2>
-						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
-|-- project-folder
-	|-- app
-		|-- home
-			home.html
-			home.module.js
-			home.controller.js
-		|-- contacts
-			contacts.html
-			contacts.module.js
-			contacts.controller.js
-	app.module.js
-	app.controller.js
-	app.css
-	index.html
-	|-- test
-		|-- unit
-		|-- e2e
-			home.pageObject.js
-			home.spec.js
-			contacts.pageObject.js
-			contacts.spec.js
-						</code></pre>
-					</section>
-					<section>
-						<h2>Better :)</h2>
-						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
-|-- project-folder
-|-- app
-	|-- home
-		home.html
-		home.module.js
-		home.controller.js
-	|-- contacts
-		contacts.html
-		contacts.module.js
-		contacts.controller.js
-	app.js
-	app.module.js
-	app.controller.js
-	app.css
-	index.html
-|-- test
-	|-- unit
-	|-- e2e
-		|-- home
-			home.pageObject.js
-			home.spec.js
-		|-- contacts
-			contacts.pageObject.js
-			contacts.spec.js
-						</code></pre>
-					</section>
+                    <h2>Protractor 3.x.x & Angular 2 changes</h2>
+                    <ul>
+                        <li>Only Jasmine 2 out of the box support</li>
+                        <li>All frameworks ( like CucumberJs ) need explicit require</li>
+                        <li class="fragment fade-in">use "<strong>useAllAngular2AppRoots</strong>" if multiple A2 apps</li>
+                        <li class="fragment fade-in">
+                            "<strong>by.binding</strong>" & "<strong>by.model</strong>" not available for Angular 2 apps
+                        </li>
+                        <li class="fragment fade-in">
+                            No perfect support for <strong>async actions</strong> (HTTP) yet..
+                            <br />( see <a href="https://plus.google.com/events/cic3ubebr8v6lvquvsr86m0jl6s">Angular Air podcast #59</a> with Julie Ralph)
+                        </li>
+                        <li class="fragment fade-in">
+                            collision <strong>Protractor & jQuery typings</strong> <br />
+                            -> consider moving tests to seperate project
+                        </li>
+                    </ul>
 
                 </section>
 
 				<section>
-					<h2>Demo!</h2>
+
+                    <section id="what-is-bdd-gherkin">
+                        <h2>What is BDD & Gherkin</h2>
+
+                        <ul>
+                            <li>Behaviour driven development</li>
+                            <li>Business definable and readable DSL</li>
+                            <li>Set of features describing behaviour</li>
+                        </ul>
+                    </section>
+
+                    <section>
+
+                        <h2>Feature file</h2>
+                        <pre><code class="hljs gherkin" contenteditable style="word-wrap: break-word;">
+Feature: This feature describes the scenarios of the set new password
+         part of our authentication component
+
+    Scenario Outline: The user is setting a new password ( valid link )
+
+    Given user clicks the valid set new password link
+    And '&lt;password&gt;' is the provided new password
+    And '&lt;repeatPassword&gt;' is the repeated new password
+    When submitting the set new password form
+    Then the set new password form is validated '&lt;valid&gt;'
+
+    Examples:
+    | password | repeatPassword | valid |
+    |          |                | false |
+    | 123      |                | false |
+    ...
+    | 12345678 | 12345678       | true  |
+                        </code></pre>
+
+                    </section>
+
+                    <section>
+                        <h2>Feature files</h2>
+                        <ul>
+                            <li>contain scenarios related to the feature</li>
+                            <li>Scenarios serve as documentation</li>
+                            <li>Scenarios define the tests to write</li>
+                        </ul>
+
+                        <p>
+                            Gherkin documentation :
+                            <a href="http://docs.behat.org/en/v2.5/guides/1.gherkin.html">docs</a>
+                        </p>
+
+                    </section>
+
 				</section>
+
+                <section id="what-is-cucumberjs">
+                    <h2>What is CucumberJs</h2>
+
+                    <img src="img/cucumber-logo.svg" alt="CucumberJs logo" class="frameworklogo"/>
+
+                    <ul>
+                        <li>BDD framework</li>
+                        <li>glue between Protractor & Gherkin</li>
+                        <li>reads the feature files</li>
+                        <li>projects them on the step definitions</li>
+                    </ul>
+                </section>
+
+                <section>
+
+                    <h2>Integration with SauceLabs</h2>
+
+                    <ul>
+                        <li>easy setup / configuration</li>
+                        <li>easily test different browsers</li>
+                    </ul>
+
+                    <pre><code>
+export SAUCE_USERNAME=samvloeberghs
+export SAUCE_ACCESS_KEY=xxxx
+
+sauceUser: process.env.SAUCE_USERNAME,
+sauceKey: process.env.SAUCE_ACCESS_KEY
+                    </code></pre>
+
+                </section>
+
+                <section>
+                    <h2>Demo</h2>
+                </section>
+
+				<section id="future-for-e2e-testing">
+					<h2>So what's next & <br />what does the future bring?</h2>
+					<ul>
+                        <li>make it part of your CI setup</li>
+                        <li>better async support ( HTTP for example )</li>
+						<li>
+                            more automated testing
+                            <br />
+                            = less QA testing teams
+                            <br />
+                            = more developers writing tests
+                        </li>
+					</ul>
+				</section>
+
+                <section id="thank-you">
+                    <h1>Thank you!</h1>
+
+                    <a href="https://www.youtube.com/watch?v=DHHKU4znvo8&autoplay=1" id="thanks" target="_blank">
+                        <img src="img/thanks.jpg" alt="Thaaaaaaanks"/>
+                    </a>
+
+                    <p>
+                        Questions? Ask anytime
+                    </p>
+                    <p>
+                        <a href="mailto:sam.vloeberghs@gmail.com">mail / hangout (sam.vloeberghs)</a> <br />
+                        <a target="_blank" href="https://twitter.com/samvloeberghs">follow / tweet @samvloeberghs</a> <br />
+                        <a target="_blank" href="https://www.linkedin.com/in/samvloeberghs">connect</a>
+                    </p>
+                </section>
 
             </div>
 

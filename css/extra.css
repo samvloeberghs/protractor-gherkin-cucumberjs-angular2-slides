@@ -3,20 +3,34 @@
 }
 
 .reveal h2,
-.reveal h3{
-    font-weight:bold;
-    font-family: 'Roboto', sans-serif;
-}
-.reveal p{
+.reveal h3 {
+    font-weight: bold;
     font-family: 'Roboto', sans-serif;
 }
 
-.reveal h1{
-    letter-spacing:5px;
+.reveal p {
+    font-family: 'Roboto', sans-serif;
 }
 
-.wide li{
-    margin:20px 0 20px 0;
+.reveal h1 {
+    letter-spacing: 5px;
+    font-size: 60px;
+}
+
+.reveal h2 {
+    font-size: 45px;
+    margin-bottom: 45px;
+}
+
+.reveal h3 {
+    font-size: 35px;
+}
+.reveal ul li {
+    margin-bottom:10px;
+}
+
+.wide li {
+    margin: 20px 0 20px 0;
 }
 
 #profilepic {
@@ -24,10 +38,51 @@
     max-width: 125px;
 }
 
-.reveal pre{
-    width:95%;
+.reveal pre {
+    width: 95%;
+
 }
 
-.reveal pre code{
-    padding:0 25px;
+.reveal pre code {
+    max-height:450px;
+    padding: 0 25px;
+}
+
+#intro {
+
+}
+
+#intro h3 {
+    text-transform: capitalize;
+}
+
+#intro img {
+    border: none;
+}
+
+#intro img.big {
+    box-shadow: none;
+}
+
+#intro img.small {
+    width: 20%;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 30px;
+}
+
+#intro img.small#cucumber {
+
+}
+
+.reveal .frameworklogo{
+    width:50%;
+    border: none;
+    padding:20px;
+    margin-bottom:40px;
+}
+
+#thanks img {
+    border-radius: 500px;
+    max-height:200px;
 }
