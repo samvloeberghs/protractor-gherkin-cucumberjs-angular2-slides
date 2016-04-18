@@ -56,11 +56,17 @@
     text-transform: capitalize;
 }
 
-#intro img {
+#intro img,
+#ng-be-shameless-promotion img {
     border: none;
 }
 
-#intro img.big {
+#intro img,
+#ng-be-shameless-promotion img {
+    height:300px;
+}
+
+.reveal img.big {
     box-shadow: none;
 }
 
@@ -71,7 +77,7 @@
     padding: 30px;
 }
 
-#intro img.small#cucumber {
+.reveal img.small#cucumber {
 
 }
 
