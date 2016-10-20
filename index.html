@@ -114,47 +114,46 @@
 
                 </section>
 
-				<section>
 
-					<section id="what-is-protractor-1"
-                             data-background="img/protractor.png">
-                        <h2>What is protractor?</h2>
+                <section id="what-is-protractor-1"
+                         data-background="img/protractor.png">
+                    <h2>What is protractor?</h2>
 
-                        <p class="fragment" style="max-width:600px; margin:0 auto; background:white; padding:25px;" class="framework">
-                            <strong>A way to measure the possible sharp angles of your Angular project</strong>
-                        </p>
+                    <p class="fragment" style="max-width:600px; margin:0 auto; background:white; padding:25px;" class="framework">
+                        <strong>A way to measure the possible sharp angles of your Angular project</strong>
+                    </p>
 
-					</section>
+                </section>
 
-                    <section id="what-is-protractor-2">
+                <section id="what-is-protractor-2">
 
-                        <img src="img/protractor-logo.png" alt="Protractor logo" class="frameworklogo"/>
+                    <img src="img/protractor-logo.png" alt="Protractor logo" class="frameworklogo"/>
 
-                        <ul>
-                            <li>Google product</li>
-                            <li>successor of the scenario runner</li>
-                            <li>E2E testing framework</li>
-                            <li>runs on top of selenium webdriver</li>
-                            <li>do things automatically in the browser</li>
-                        </ul>
+                    <ul>
+                        <li>Google product</li>
+                        <li>successor of the scenario runner</li>
+                        <li>E2E testing framework</li>
+                        <li>runs on top of selenium webdriver</li>
+                        <li>do things automatically in the browser</li>
+                    </ul>
 
-                    </section>
+                </section>
 
-					<section id="locators-actions">
-						<h2>Locators & actions</h2>
-						<ul>
-							<li>find elements</li>
-							<li>perform actions</li>
-							<li>retrieve values</li>
-						</ul>
-						<p>
-							<strong>All operations are async!</strong>
-						</p>
-					</section>
+                <section id="locators-actions">
+                    <h2>Locators & actions</h2>
+                    <ul>
+                        <li>find elements</li>
+                        <li>perform actions</li>
+                        <li>retrieve values</li>
+                    </ul>
+                    <p>
+                        <strong>All operations are async!</strong>
+                    </p>
+                </section>
 
-					<section id="locators">
-						<h3>Locators</h3>
-						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
+                <section id="locators">
+                    <h3>Locators</h3>
+                    <pre><code class="hljs" contenteditable style="word-wrap: break-word;">
 element(by.id('addbutton'));	// <button id="addbutton"></button>
 element(by.css('some-css'));	// <some-css></some-css>
 element(by.css('.special'));	// <span class="special"></span>
@@ -164,16 +163,16 @@ element(by.model('second'));	// <input ng-model="second" />
 
 element(by.css('my-css'));	// is the same as
 $('my-css');			// short cut selector  ( css selectors )
-						</code></pre>
+                    </code></pre>
 
-						<p>Protractor documentation : <a href="https://angular.github.io/protractor/#/locators#locators">locators</a></p>
-					</section>
+                    <p>Protractor documentation : <a href="https://angular.github.io/protractor/#/locators#locators">locators</a></p>
+                </section>
 
-                    <section id="finding-multiple-elements">
-                        <h3>Finding multiple elements</h3>
-						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
+                <section id="finding-multiple-elements">
+                    <h3>Finding multiple elements</h3>
+                    <pre><code class="hljs" contenteditable style="word-wrap: break-word;">
 element.all(by.css('.selector')).then((elements) => {
-    /* elements is an array of ElementFinders. */
+/* elements is an array of ElementFinders. */
 });
 
 /* Number of elements */
@@ -185,18 +184,18 @@ element.all(locator).get(index);
 /* First and last */
 element.all(locator).first();
 element.all(locator).last();
-                        </code></pre>
+                    </code></pre>
 
-                        <p>
-                            Protractor documentation :
-                            <a href="https://angular.github.io/protractor/#/locators#finding-multiple-elements">multiple elements</a>
-                        </p>
+                    <p>
+                        Protractor documentation :
+                        <a href="https://angular.github.io/protractor/#/locators#finding-multiple-elements">multiple elements</a>
+                    </p>
 
-                    </section>
+                </section>
 
-					<section id="actions">
-						<h3>Actions</h3>
-						<pre><code class="hljs" contenteditable style="word-wrap: break-word;">
+                <section id="actions">
+                    <h3>Actions</h3>
+                    <pre><code class="hljs" contenteditable style="word-wrap: break-word;">
 var el = element(locator);
 
 /* Click on the element */
@@ -210,12 +209,11 @@ el.clear();
 
 /* Get the value of an attribute, for example, get the value of an input */
 el.getAttribute('value');
-						</code></pre>
+                    </code></pre>
 
-						<p>Protractor documentation : <a href="https://angular.github.io/protractor/#/locators#actions">actions</a></p>
-					</section>
+                    <p>Protractor documentation : <a href="https://angular.github.io/protractor/#/locators#actions">actions</a></p>
+                </section>
 
-				</section>
 
                 <section id="best-practices-1">
                     <h2>Best practices in E2E testing</h2>
@@ -242,7 +240,7 @@ el.getAttribute('value');
 
                 <section id="protractor-angular2-changes">
 
-                    <h2>Protractor 3.x.x & Angular 2 changes</h2>
+                    <h2>Protractor 3.x.x - 4.x.X & Angular 2 changes</h2>
                     <ul>
                         <li>Only Jasmine 2 out of the box support</li>
                         <li>All frameworks ( like CucumberJs ) need explicit require</li>
@@ -263,59 +261,56 @@ el.getAttribute('value');
 
                 </section>
 
-				<section>
+                <section id="what-is-bdd-gherkin">
+                    <h2>What is BDD & Gherkin</h2>
 
-                    <section id="what-is-bdd-gherkin">
-                        <h2>What is BDD & Gherkin</h2>
+                    <ul>
+                        <li>Behaviour driven development</li>
+                        <li>Business definable and readable DSL</li>
+                        <li>Set of features describing behaviour</li>
+                    </ul>
+                </section>
 
-                        <ul>
-                            <li>Behaviour driven development</li>
-                            <li>Business definable and readable DSL</li>
-                            <li>Set of features describing behaviour</li>
-                        </ul>
-                    </section>
+                <section id="what-are-feature-files-1">
 
-                    <section id="what-are-feature-files-1">
-
-                        <h2>Feature files</h2>
-                        <pre><code class="hljs gherkin" contenteditable style="word-wrap: break-word;">
+                    <h2>Feature files</h2>
+                    <pre><code class="hljs gherkin" contenteditable style="word-wrap: break-word;">
 Feature: This feature describes the scenarios of the set new password
-         part of our authentication component
+     part of our authentication component
 
-    Scenario Outline: The user is setting a new password ( valid link )
+Scenario Outline: The user is setting a new password ( valid link )
 
-    Given user clicks the valid set new password link
-    And '&lt;password&gt;' is the provided new password
-    And '&lt;repeatPassword&gt;' is the repeated new password
-    When submitting the set new password form
-    Then the set new password form is validated '&lt;valid&gt;'
+Given user clicks the valid set new password link
+And '&lt;password&gt;' is the provided new password
+And '&lt;repeatPassword&gt;' is the repeated new password
+When submitting the set new password form
+Then the set new password form is validated '&lt;valid&gt;'
 
-    Examples:
-    | password | repeatPassword | valid |
-    |          |                | false |
-    | 123      |                | false |
-    ...
-    | 12345678 | 12345678       | true  |
-                        </code></pre>
+Examples:
+| password | repeatPassword | valid |
+|          |                | false |
+| 123      |                | false |
+...
+| 12345678 | 12345678       | true  |
+                    </code></pre>
 
-                    </section>
+                </section>
 
-                    <section id="what-are-feature-files-2">
-                        <h2>Feature files</h2>
-                        <ul>
-                            <li>contain scenarios related to the feature</li>
-                            <li>Scenarios serve as documentation</li>
-                            <li>Scenarios define the tests to write</li>
-                        </ul>
+                <section id="what-are-feature-files-2">
+                    <h2>Feature files</h2>
+                    <ul>
+                        <li>contain scenarios related to the feature</li>
+                        <li>Scenarios serve as documentation</li>
+                        <li>Scenarios define the tests to write</li>
+                    </ul>
 
-                        <p>
-                            Gherkin documentation :
-                            <a href="http://docs.behat.org/en/v2.5/guides/1.gherkin.html">docs</a>
-                        </p>
+                    <p>
+                        Gherkin documentation :
+                        <a href="http://docs.behat.org/en/v2.5/guides/1.gherkin.html">docs</a>
+                    </p>
 
-                    </section>
+                </section>
 
-				</section>
 
                 <section id="what-is-cucumberjs">
                     <h2>What is CucumberJs</h2>
